@@ -111,14 +111,14 @@ func TestAddPrefixPerLine(t *testing.T) {
 
 func TestConvertOrdinalToString(t *testing.T) {
 	t.Run("test", func(t *testing.T) {
-		assert := NewAssert(t)
-		assert(ConvertOrdinalToString(0)).Equals("")
-		assert(ConvertOrdinalToString(1)).Equals("1st")
-		assert(ConvertOrdinalToString(2)).Equals("2nd")
-		assert(ConvertOrdinalToString(3)).Equals("3rd")
-		assert(ConvertOrdinalToString(4)).Equals("4th")
-		assert(ConvertOrdinalToString(10)).Equals("10th")
-		assert(ConvertOrdinalToString(100)).Equals("100th")
+		assert := New(t)
+		assert(convertOrdinalToString(0)).Equals("")
+		assert(convertOrdinalToString(1)).Equals("1st")
+		assert(convertOrdinalToString(2)).Equals("2nd")
+		assert(convertOrdinalToString(3)).Equals("3rd")
+		assert(convertOrdinalToString(4)).Equals("4th")
+		assert(convertOrdinalToString(10)).Equals("10th")
+		assert(convertOrdinalToString(100)).Equals("100th")
 	})
 }
 

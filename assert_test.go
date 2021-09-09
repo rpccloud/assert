@@ -109,6 +109,19 @@ func TestAddPrefixPerLine(t *testing.T) {
 	})
 }
 
+func TestConvertOrdinalToString(t *testing.T) {
+	t.Run("test", func(t *testing.T) {
+		assert := NewAssert(t)
+		assert(ConvertOrdinalToString(0)).Equals("")
+		assert(ConvertOrdinalToString(1)).Equals("1st")
+		assert(ConvertOrdinalToString(2)).Equals("2nd")
+		assert(ConvertOrdinalToString(3)).Equals("3rd")
+		assert(ConvertOrdinalToString(4)).Equals("4th")
+		assert(ConvertOrdinalToString(10)).Equals("10th")
+		assert(ConvertOrdinalToString(100)).Equals("100th")
+	})
+}
+
 func TestNewAssert(t *testing.T) {
 	t.Run("t is nil", func(t *testing.T) {
 		assert := New(t)
